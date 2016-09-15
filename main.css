@@ -1,5 +1,232 @@
-#shirtWhole {
-  background-color: #999;
-  height: 300px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+}
+
+body {
+  padding: 20px;
+  color: #66A5F5;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+.shirtWhole {
+  float: left;
   width: 200px;
+  height: 250px;
+  margin: 10px;
+}
+
+.shirtParts {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.shirtPic {
+  position: absolute;
+  width: 100%;
+  height: 180px;
+  border: 2px solid #66A5F5;
+  border-bottom: 0;
+}
+
+.rotateIcon {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid #66A5F5;
+  border-bottom: 2px solid #66A5F5;
+  line-height: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.options {
+  position: absolute;
+  top: 180px;
+  width: 100%;
+  height: 35px;
+  border: 2px solid #66A5F5;
+}
+
+.option {
+  font-size: 12px;
+  float: left;
+  width: 20%;
+  height: 100%;
+  line-height: 35px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.option:hover, .rotateIcon:hover {
+  background-color: #66A5F5;
+  color: white;
+}
+
+.refresh {
+  border-right: 1.5px solid #66A5F5;
+}
+
+.favorite {
+  border-left: 1.5px solid #66A5F5;
+  border-right: 1.5px solid #66A5F5;
+}
+
+.size {
+  font-family: arial, sans-serif;
+  border-left: 1.5px solid #66A5F5;
+  border-right: 1.5px solid #66A5F5;
+  position: relative;
+  overflow: hidden;
+}
+
+.size:hover {
+  overflow: visible;
+}
+
+.moreSizes {
+  position: absolute;
+  top: -100px;
+  left: -15%;
+  width: 130%;
+  height: 100px;
+  background-color: white;
+  border: 2px solid #66A5F5;
+}
+
+.xlarge {
+  width: 100%;
+  height: auto;
+  padding: 0 12px;
+  position: relative;
+  top: 10px;
+}
+
+.large {
+  width: 100%;
+  height: auto;
+  padding: 0 14px;
+  position: relative;
+  top: -5px;
+}
+
+.medium {
+  width: 100%;
+  height: auto;
+  padding: 0 16px;
+  position: relative;
+  top: -23px;
+}
+
+.small {
+  width: 100%;
+  height: auto;
+  padding: 0 18px;
+  position: relative;
+  top: -45px;
+}
+
+.color {
+  border-left: 1.5px solid #66A5F5;
+  border-right: 1.5px solid #66A5F5;
+  position: relative;
+  overflow: hidden;
+}
+
+.color:hover .colorIcon {
+  background-color: #66A5F5;
+  width: 17px;
+  height: 17px;
+  border: 2px solid white;
+}
+
+.color:hover {
+  overflow: visible;
+}
+
+.moreColors {
+  position: absolute;
+  top: -50px;
+  left: -15%;
+  width: 130%;
+  height: 50px;
+  background-color: white;
+  border: 2px solid #66A5F5;
+}
+
+.colorIcon {
+  width: 15px;
+  height: 15px;
+  background-color: #66A5F5;
+  margin: auto;
+  margin-top: 9px;
+}
+
+.blue {
+  float: left;
+  padding-top: 5px;
+  width: 50%;
+  height: 50%;
+  color: #66A5F5;
+}
+
+.pink {
+  float: left;
+  padding-top: 5px;
+  width: 50%;
+  height: 50%;
+  color: pink;
+}
+
+.yellow {
+  float: left;
+  padding-top: 5px;
+  width: 50%;
+  height: 50%;
+  color: yellow;
+}
+
+.green {
+  float: left;
+  padding-top: 5px;
+  width: 50%;
+  height: 50%;
+  font-size: 15px;
+  color: green;
+}
+
+.cart {
+  border-left: 1.5px solid #66A5F5;
+}
+
+.nameAndPrice {
+  position: absolute;
+  padding: 5px;
+  top: 215px;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+.name {
+  float: left;
+  width: 60%;
+}
+
+.price {
+  font-weight: bold;
+  text-align: right;
+  float: right;
+  width: 30%;
 }

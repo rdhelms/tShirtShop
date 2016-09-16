@@ -6,14 +6,23 @@
 }
 
 body {
+  position: relative;
+  left: 12%;
+  width: 59%;
+  /*border: 1px solid black;*/
   padding: 20px;
-  color: #66A5F5;
+  color: #5ca4d6;
+  transform: scale(1.5);
+  transform-origin: top left;
 }
 
 img {
   width: 100%;
   height: 100%;
   padding: 15px;
+}
+
+#allShirts {
 }
 
 .shirtWhole {
@@ -29,24 +38,124 @@ img {
   height: 100%;
 }
 
-.shirtPic {
+.shirtBorder {
   position: absolute;
   width: 100%;
   height: 180px;
-  border: 2px solid #66A5F5;
+  border: 2px solid #5ca4d6;
   border-bottom: 0;
 }
 
+.shirtPic {
+  background-position: center;
+  background-size: 82%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 180px;
+}
+
+.shirtBlue {
+  background-image: url("shirts/blue-front.png");
+}
+
+.shirtPink {
+  background-image: url("shirts/pink-front.png");
+}
+
+.shirtYellow {
+  background-image: url("shirts/yellow-front.png");
+}
+
 .rotateIcon {
+  z-index: 1;
   position: absolute;
   right: 0;
   width: 20px;
   height: 20px;
-  border-left: 2px solid #66A5F5;
-  border-bottom: 2px solid #66A5F5;
+  border-right: 2px solid #5ca4d6;
+  border-top: 2px solid #5ca4d6;
   line-height: 20px;
   vertical-align: middle;
   text-align: center;
+  transform: rotate(180deg);
+  outline: none;
+  focus: none;
+}
+
+.rotateIcon:focus+div.shirtBlue {
+  animation: flipBlue 2s 1;
+}
+
+.rotateIcon:focus+div.shirtPink {
+  animation: flipPink 2s 1;
+}
+
+.rotateIcon:focus+div.shirtYellow {
+  animation: flipYellow 2s 1;
+}
+
+@keyframes flipBlue {
+  5% {
+    transform: rotateY(90deg);
+  }
+  10% {
+    background-image: url("shirts/blue-back.png");
+    transform: rotateY(0deg);
+  }
+  90% {
+    background-image: url("shirts/blue-back.png");
+    transform: rotateY(0deg);
+  }
+  95% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    background-image: url("shirts/blue-front.png");
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes flipPink {
+  5% {
+    transform: rotateY(90deg);
+  }
+  10% {
+    background-image: url("shirts/pink-back.png");
+    transform: rotateY(0deg);
+  }
+  90% {
+    background-image: url("shirts/pink-back.png");
+    transform: rotateY(0deg);
+  }
+  95% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    background-image: url("shirts/pink-front.png");
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes flipYellow {
+  5% {
+    transform: rotateY(90deg);
+  }
+  10% {
+    background-image: url("shirts/yellow-back.png");
+    transform: rotateY(0deg);
+  }
+  90% {
+    background-image: url("shirts/yellow-back.png");
+    transform: rotateY(0deg);
+  }
+  95% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    background-image: url("shirts/yellow-front.png");
+    transform: rotateY(0deg);
+  }
 }
 
 .options {
@@ -54,7 +163,7 @@ img {
   top: 180px;
   width: 100%;
   height: 35px;
-  border: 2px solid #66A5F5;
+  border: 2px solid #5ca4d6;
 }
 
 .option {
@@ -68,144 +177,222 @@ img {
 }
 
 .option:hover, .rotateIcon:hover {
-  background-color: #66A5F5;
+  background-color: #5ca4d6;
   color: white;
+  cursor: pointer;
 }
 
+
 .refresh {
-  border-right: 1.5px solid #66A5F5;
+  border-right: 1.5px solid #5ca4d6;
 }
 
 .favorite {
-  border-left: 1.5px solid #66A5F5;
-  border-right: 1.5px solid #66A5F5;
+  border-left: 1.5px solid #5ca4d6;
+  border-right: 1.5px solid #5ca4d6;
 }
 
 .size {
   font-family: arial, sans-serif;
-  border-left: 1.5px solid #66A5F5;
-  border-right: 1.5px solid #66A5F5;
+  border-left: 1.5px solid #5ca4d6;
+  border-right: 1.5px solid #5ca4d6;
   position: relative;
-  overflow: hidden;
 }
 
-.size:hover {
-  overflow: visible;
+.size:hover .moreSizes {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 5px);
 }
 
 .moreSizes {
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
-  top: -100px;
+  top: -105px;
   left: -15%;
   width: 130%;
   height: 100px;
   background-color: white;
-  border: 2px solid #66A5F5;
+  border: 2px solid #5ca4d6;
+  transition: all .5s ease-out;
+}
+
+.triangleBlue {
+  position: absolute;
+  bottom: -10px;
+  left: 12px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #5ca3d6 transparent transparent transparent;
+}
+
+.triangleWhite {
+  position: absolute;
+  bottom: -8px;
+  left: 12px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: white transparent transparent transparent;
+}
+
+
+
+.blueShirt {
+  -webkit-filter: invert(50%) sepia(100%) hue-rotate(150deg);
+}
+
+.pinkShirt {
+    -webkit-filter: invert(50%) sepia(100%) hue-rotate(250deg);
+}
+
+.yellowShirt {
+    -webkit-filter: invert(50%) sepia(100%) hue-rotate(350deg);
+}
+
+.sizeShirt {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.sizeXLargeText {
+  font-size: 5px;
+  line-height: 5px;
+  position: relative;
+  top: -55px;
+}
+
+.sizeLargeText {
+  font-size: 5px;
+  line-height: 5px;
+  position: relative;
+  top: -53px;
+}
+
+.sizeMediumText {
+  font-size: 5px;
+  line-height: 5px;
+  position: relative;
+  top: -51px;
+}
+
+.sizeSmallText {
+  font-size: 5px;
+  line-height: 5px;
+  position: relative;
+  top: -49px;
 }
 
 .xlarge {
   width: 100%;
-  height: auto;
-  padding: 0 12px;
+  height: 23px;
   position: relative;
-  top: 10px;
 }
 
 .large {
   width: 100%;
-  height: auto;
-  padding: 0 14px;
+  height: 19px;
+  padding: 2px;
   position: relative;
-  top: -5px;
 }
 
 .medium {
   width: 100%;
-  height: auto;
-  padding: 0 16px;
+  height: 16px;
+  padding: 4px;
   position: relative;
-  top: -23px;
 }
 
 .small {
   width: 100%;
-  height: auto;
-  padding: 0 18px;
+  height: 10px;
+  padding: 6px;
   position: relative;
-  top: -45px;
 }
 
 .color {
-  border-left: 1.5px solid #66A5F5;
-  border-right: 1.5px solid #66A5F5;
+  border-left: 1.5px solid #5ca4d6;
+  border-right: 1.5px solid #5ca4d6;
   position: relative;
-  overflow: hidden;
 }
 
 .color:hover .colorIcon {
-  background-color: #66A5F5;
+  background-color: #5ca4d6;
   width: 17px;
   height: 17px;
   border: 2px solid white;
 }
 
-.color:hover {
-  overflow: visible;
+.color:hover .moreColors {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 5px);
 }
 
 .moreColors {
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
-  top: -50px;
+  top: -55px;
   left: -15%;
-  width: 130%;
+  width: 135%;
   height: 50px;
+  padding: 3px;
   background-color: white;
-  border: 2px solid #66A5F5;
+  border: 2px solid #5ca4d6;
+  transition: all .5s ease;
+  font-size: 19px;
 }
 
 .colorIcon {
   width: 15px;
   height: 15px;
-  background-color: #66A5F5;
+  background-color: #5ca4d6;
   margin: auto;
   margin-top: 9px;
 }
 
 .blue {
   float: left;
-  padding-top: 5px;
+  /*padding-top: 3px;*/
   width: 50%;
   height: 50%;
-  color: #66A5F5;
+  color: #81bce5;
 }
 
 .pink {
   float: left;
-  padding-top: 5px;
+  /*padding-top: 3px;*/
   width: 50%;
   height: 50%;
-  color: pink;
+  color: #d583ac;
 }
 
 .yellow {
   float: left;
-  padding-top: 5px;
+  /*padding-top: 1px;*/
   width: 50%;
   height: 50%;
-  color: yellow;
+  color: #deb17e;
 }
 
 .green {
   float: left;
-  padding-top: 5px;
+  /*padding-top: 1px;*/
   width: 50%;
   height: 50%;
   font-size: 15px;
-  color: green;
+  color: #8bb992;
 }
 
 .cart {
-  border-left: 1.5px solid #66A5F5;
+  border-left: 1.5px solid #5ca4d6;
 }
 
 .nameAndPrice {
